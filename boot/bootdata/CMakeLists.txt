@@ -56,6 +56,12 @@ if(ENABLE_WOW64)
     add_registry_inf(hivewow64.inf)
 endif()
 
+# Server edition overrides come last, so their values replace the desktop
+# ones in the finished hives.
+if(LIBERNT_SERVER)
+    add_registry_inf(hiveserver.inf)
+endif()
+
 # Regtest
 add_cd_file(FILE ${CMAKE_CURRENT_SOURCE_DIR}/bootcdregtest/regtest.cmd DESTINATION reactos/bin FOR all)
 

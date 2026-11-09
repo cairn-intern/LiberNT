@@ -1,0 +1,14 @@
+[AddReg]
+
+; LiberNT Server edition overrides. Boot data applies this file after the
+; desktop hive sources when LIBERNT_SERVER is on, so these values replace
+; the desktop ones in the finished hives.
+
+; Report the server product type instead of the workstation one
+; (the desktop value is set in hivesys.inf).
+HKLM,"SYSTEM\CurrentControlSet\Control\ProductOptions","ProductType",2,"ServerNT"
+
+; Start a command prompt as the shell instead of Explorer. Winlogon runs
+; whatever the Shell value names; the desktop value is set in hivesft.inf,
+; and the ConsoleShell value there already points at cmd.exe as well.
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon","Shell",0x00020000,"%SystemRoot%\system32\cmd.exe"
