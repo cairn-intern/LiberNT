@@ -4,6 +4,7 @@ config PROFILE_AMD64
     var ROSCONFIG_PROFILE
     value generic "Generic AMD64"
     value lattepandamu "LattePanda Mu"
+    value server "LiberNT Server (headless)"
     default generic
     depends ARCH=amd64
     help
@@ -11,3 +12,7 @@ config PROFILE_AMD64
 
       LattePanda Mu adds the board-specific UEFI HTTP boot option in the
       Boot options menu and its external UEFI network stack.
+
+      LiberNT Server builds the headless Server edition of the
+      preinstalled image: a command prompt shell, the server product
+      type and the SAC serial console on COM1.

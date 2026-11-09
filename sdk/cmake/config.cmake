@@ -298,6 +298,9 @@ cmake_dependent_option(FREELDR_HTTP_BOOT
                        "Whether to build the FreeLdr UEFI HTTP boot path." OFF
                        "LATTEPANDAMU_SUPPORT OR RPI_SUPPORT" OFF)
 
+option(LIBERNT_SERVER
+       "Whether to build the headless Server edition of the preinstalled image." OFF)
+
 cmake_dependent_option(ENABLE_ROSAUTOTEST_BOOT_RUN
                        "Whether to run the full RosAutoTest suite automatically at boot." OFF
                        "CMAKE_BUILD_TYPE STREQUAL Debug" OFF)
